@@ -12,6 +12,7 @@ FROM amazoncorretto:17
 VOLUME /tmp
 
 # Copy the JAR from the build stage
-COPY --from=build /app/build/*.jar app.jar
-ENTRYPOINT ["java","-jar","app.jar"]
+COPY --from=build /app/build/libs/app.jar app.jar
+RUN echo "$PWD"
+ENTRYPOINT ["java","-jar","./app.jar"]
 EXPOSE 8081
