@@ -13,5 +13,5 @@ VOLUME /tmp
 
 # Copy the JAR from the build stage
 COPY --from=build /app/build/*.jar app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]
 EXPOSE 8081
