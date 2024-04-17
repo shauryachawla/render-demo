@@ -4,6 +4,7 @@ WORKDIR /app
 COPY . .
 
 # Set execution permission for the Maven wrapper
+RUN chmod +x ./gradlew
 RUN ./gradlew build
 
 # Stage 2: Create the final Docker image using OpenJDK 19
