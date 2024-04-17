@@ -1,12 +1,12 @@
 # Importing JDK and copying required files
 FROM openjdk:19-jdk AS build
 WORKDIR /app
-COPY pom.xml .
+COPY build.gradle .
 COPY src src
 
 # Copy Maven wrapper
 COPY gradlew .
-COPY .gradle .gradle
+COPY ./gradle ./gradle
 
 # Set execution permission for the Maven wrapper
 RUN chmod +x ./gradlew
